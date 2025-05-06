@@ -1,6 +1,7 @@
 # 📝 Todo List REST API
 
-This is a simple **Todo List REST API** built using **Java**, **Spring Boot**, and **MySQL**. It supports basic CRUD operations for managing todos (Create, Read, Update, Delete).
+This is a simple Todo List REST API built using Java, Spring Boot, MySQL, and a static frontend with HTML, CSS, and JavaScript. It supports basic CRUD operations for managing todos (Create, Read, Update, Delete).
+
 
 ---
 
@@ -12,17 +13,30 @@ This is a simple **Todo List REST API** built using **Java**, **Spring Boot**, a
 - 🗑️ Delete todos
 - 📦 MySQL database integration
 - 🌐 RESTful API design
+- 🖥️ Frontend with HTML, CSS, and JavaScript for interacting with the backend
+
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Java 17
-- Spring Boot
-- Spring Data JPA
-- MySQL
-- Lombok (optional)
-- Postman (for API testing)
+- Backend:
+  - Java 17
+  - Spring Boot
+  - Spring Data JPA
+  - MySQL
+  - Lombok (optional)
+
+- Frontend:
+  - HTML 
+  - CSS 
+  - JavaScript 
+  
+- Database:
+  - MySQL
+
+- API Testing:
+  - Postman (for API testing)
 
 ---
 
@@ -37,8 +51,11 @@ src/
     │       ├── service/      → Business logic
     │       ├── repository/   → JPA interfaces
     │       └── model/        → Entity class
-    └── resources/
-        └── application.properties
+    ├── resources/
+    │   └── application.properties
+    └── static/
+        └── frontend/        → HTML, CSS, JS files
+
 ```
 
 ---
@@ -74,6 +91,13 @@ spring.jpa.show-sql=true
 ```bash
 ./mvnw spring-boot:run
 ```
+
+### 4. Frontend Setup
+
+The frontend is located in the static/frontend directory. You can simply open the index.html file in a web browser to view and interact with the Todo list. Ensure that the apiUrl in app.js is pointing to the correct backend URL:
+
+const apiUrl = "http://localhost:8080/api/todos";  // Ensure the backend is running on this URL
+
 
 ---
 
