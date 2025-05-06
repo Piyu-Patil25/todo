@@ -1,5 +1,6 @@
 package com.design.todo.controller;
 
+import com.design.todo.dto.TodoDTO;
 import com.design.todo.model.Todo;
 import com.design.todo.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,10 @@ public class TodoController {
         return ResponseEntity.ok("Todo created successfully!");
     }
 
-    // Update a todo
+    // Update a todo (using DTO)
     @PutMapping("/{id}")
-    public ResponseEntity<String> updateTodo(@PathVariable Long id, @RequestBody Todo todo) {
-        todoService.updateTodo(id, todo);
+    public ResponseEntity<String> updateTodo(@PathVariable Long id, @RequestBody TodoDTO todoDTO) {
+        todoService.updateTodo(id, todoDTO);
         return ResponseEntity.ok("Todo updated successfully!");
     }
 
@@ -42,5 +43,4 @@ public class TodoController {
         todoService.deleteTodo(id);
         return ResponseEntity.ok("Todo deleted successfully!");
     }
-
 }
